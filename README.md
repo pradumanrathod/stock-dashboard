@@ -15,11 +15,14 @@ A real-time stock portfolio tracker built with Next.js, Tailwind CSS, and a cust
 ---
 
 ##install dependencies
+
 npm install
 npm run dev
 
+--
 
 ##live demo
+
 Frontend: https://stock-dashboard.vercel.app
 
 ## Tech Stack
