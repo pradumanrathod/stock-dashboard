@@ -41,7 +41,12 @@ const groupBySector = (
   totalPresentValue: number;
   totalGainLoss: number;
 }> =>
-  stocks.reduce((acc, stock) => {
+  stocks.reduce((acc: Record<string, {
+    stocks: Stock[];
+    totalInvestment: number;
+    totalPresentValue: number;
+    totalGainLoss: number;
+  }>, stock) => {
     acc[stock.sector] ??= {
       stocks: [],
       totalInvestment: 0,
@@ -54,6 +59,7 @@ const groupBySector = (
     acc[stock.sector].totalGainLoss += stock.gainLoss || 0;
     return acc;
   }, {});
+
 
 export default function Home() {
   const [stocks, setStocks] = useState<Stock[]>([]);
