@@ -74,7 +74,7 @@ export default function Home() {
       const results = await Promise.all(
         portfolioData.map(async (stock) => {
           try {
-            const { data } = await axios.get(`http://localhost:5000/api/stock/${stock.symbol}`);
+const { data } = await axios.get(`http://localhost:5000/api/stock/${stock.symbol}`);
             const cmp = data.cmp;
             const investment = stock.purchasePrice * stock.quantity;
             const presentValue = cmp * stock.quantity;

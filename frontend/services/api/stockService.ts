@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const fetchStockData = async (symbol: string) => {
-  const res = await axios.get(`http://localhost:5000/api/stock/${symbol}`);
+  const baseURL = process.env.NEXT_PUBLIC_API_URL;
+  const res = await axios.get(`${baseURL}/api/stock/${symbol}`);
   return res.data;
 };
